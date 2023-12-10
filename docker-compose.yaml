@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  coredns:
+    image: coredns/coredns
+    command: -conf /data/Corefile
+    volumes:
+    - ./data:/data:ro
