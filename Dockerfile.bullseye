@@ -1,4 +1,6 @@
 FROM debian:bullseye
 
 RUN apt-get update && apt-get install -y dnsutils bash curl
-CMD [ "/bin/bash", "-c", "--", "while true; do sleep 30; done;" ]
+ENTRYPOINT ["/usr/bin/tini", "--"]
+
+

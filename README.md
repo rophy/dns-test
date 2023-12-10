@@ -15,18 +15,18 @@ make init
 Repeat this for `alpine314`, `alpine318` and `bullseye`:
 
 ```bash
-docker-compose exec alpine314 bash
-nslookup long.hello.local
-dig long.hello.local
-curl -v long.hello.local
+docker-compose run --rm bullseye nslookup long.hello.local
+docker-compose run --rm bullseye dig long.hello.local
+docker-compose run --rm bullseye curl -v long.hello.local
+docker-compose run --rm bullseye ping long.hello.local
 ```
 
 ## Finding
 
-`y,y` where 1st y means `DNS over TCP is triggered`, 2nd y means `works`
+`y,y` where 1st y means `DNS over TCP is triggered`, 2nd y means `ip resolution works`
 
-| Image      | nslookup | dig | curl |
-| ---------- | -------- | --- | ---- |
-| alpine314  | y,y      | y,y | y,y  |
-| alpine318  | y,y      | y,y | y,n  |
-| bullseye   | y,y      | y,y | y,y  |
+| Image      | nslookup | dig | curl | ping |
+| ---------- | -------- | --- | ---- | ---- |
+| alpine314  | n,y      | y,y | n,y  | n,y  |
+| alpine318  | n,y      | y,y | y,n  | y,n  |
+| bullseye   | n,y      | y,y | y,y  | y,y  |

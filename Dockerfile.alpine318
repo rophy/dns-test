@@ -2,4 +2,3 @@ FROM alpine:3.18.0
 
 RUN apk add bash curl bind-tools tini
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD [ "/bin/sh", "-c", "--", "while true; do sleep 30; done;" ]
