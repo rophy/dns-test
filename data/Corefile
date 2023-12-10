@@ -1,3 +1,9 @@
 .:53 {
     whoami
 }
+
+hello.local:53 {
+    file /data/hello.local.zone
+    errors
+    log
+}

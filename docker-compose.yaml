@@ -5,3 +5,7 @@ services:
     command: -conf /data/Corefile
     volumes:
     - ./data:/data:ro
+  alpine314:
+    image: alpine:3.14.0
+    tty: true
+    command: [ "/bin/sh", "-c", "--", "while true; do sleep 30; done;" ]
