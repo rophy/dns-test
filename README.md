@@ -23,7 +23,7 @@ curl -v long.hello.local
 
 ## Finding
 
-`y,y` where 1st y means `triggers TCP`, 2nd y means `works`
+`y,y` where 1st y means `DNS over TCP is triggered`, 2nd y means `works`
 
 | Image      | nslookup | dig | curl |
 | ---------- | -------- | --- | ---- |
