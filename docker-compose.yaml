@@ -6,6 +6,14 @@ services:
     volumes:
     - ./data:/data:ro
   alpine314:
-    image: alpine:3.14.0
-    tty: true
-    command: [ "/bin/sh", "-c", "--", "while true; do sleep 30; done;" ]
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine314
+    dns:
+    - ${COREDNS_IP}
+  alpine318:
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine318
+    dns:
+    - ${COREDNS_IP}
