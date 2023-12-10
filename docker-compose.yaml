@@ -17,3 +17,9 @@ services:
       dockerfile: Dockerfile.alpine318
     dns:
     - ${COREDNS_IP}
+  bullseye:
+    build:
+      context: .
+      dockerfile: Dockerfile.bullseye
+    dns:
+    - ${COREDNS_IP}
