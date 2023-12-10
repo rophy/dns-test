@@ -23,3 +23,9 @@ services:
       dockerfile: Dockerfile.bullseye
     dns:
     - ${COREDNS_IP}
+  busybox:
+    build:
+      context: .
+      dockerfile: Dockerfile.busybox
+    dns:
+    - ${COREDNS_IP}
