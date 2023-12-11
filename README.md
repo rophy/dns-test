@@ -39,6 +39,8 @@ After the tests, review output files:
 
 ## Finding
 
+test output: https://gist.github.com/rophy/3e53036bd4c23f59d5693bcc8093b319
+
 - `y,y` where 1st y means `DNS over TCP is triggered`, 2nd y means `ip resolution returned something`
 - Check coredns console log to see if DNS over TCP is triggered
 - busy used `wget --timeout=1` instead of curl.
