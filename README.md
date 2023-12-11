@@ -2,7 +2,15 @@
 
 test scenario for alpine/musl dns issue
 
+## Pre-requisites
+
+- docker
+- docker-compose
+- bash
+
 ## Setup
+
+
 
 The `docker-compose.yaml` contains following setup:
 
@@ -10,24 +18,24 @@ The `docker-compose.yaml` contains following setup:
 - alpine 3.14, alpine 3.18, bullseye and busybox-uclibc for running commands
 
 
-To initialize:
+To build the containers:
 
 ```bash
-make init
+docker-compose build
 ```
-
-which runs up coredns, get its container IP, and set this IP into DNS server of the other containers.
 
 ## Testing
 
-Repeat this for `alpine314`, `alpine318` and `bullseye`:
-
 ```bash
-docker-compose run --rm bullseye nslookup long.hello.local
-docker-compose run --rm bullseye dig long.hello.local
-docker-compose run --rm bullseye curl -v long.hello.local
-docker-compose run --rm bullseye ping long.hello.local
+bash scripts/test.sh
 ```
+
+After the tests, review output files:
+
+- alpine314.output
+- alpine318.output
+- bullseye.output
+- busybox.output
 
 ## Finding
 
