@@ -1,6 +1,4 @@
 FROM debian:bullseye
 
-RUN apt-get update && apt-get install -y dnsutils bash curl
+RUN apt-get update && apt-get install -y dnsutils bash curl tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
-
-
